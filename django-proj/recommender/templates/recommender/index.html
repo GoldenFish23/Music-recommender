@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'recommender/index.css' %}" type="text/css">
+        <title>Pigeon Search</title>
+    </head>
+    <body>
+        <nav>
+            <h1>Pigeon Search</h1>
+            <hr>
+        </nav>
+        
+        <div class="maindiv">
+            <div class="sub-main">
+                <h2>Search your songs here.</h2>
+                <form method = "post">
+                    {% csrf_token %}
+                    <input type ="text" placeholder="Search songs here" name="song_name" class="txt">
+                    <input type="submit" value="Search" class="btn">
+                </form>
+            </div>
+        </div>
+        <div class="results">
+            <div class="sub-res">
+                {% if similar_song %}
+                    <h2>Similar songs</h2>
+                    <ul>
+                        {% for song in similar_song %}
+                            <li>
+                                <div>
+                                <a href="{% url 'recommender:song_info' song.track_id %}" target="_blank">{{ song.track_name }}</a><br>
+                                by {{ song.artist_name }}<br>
+                                {{ song.language }}
+                                {{ song.genre }}
+                                {{ song.Cluster }}
+                                </div>
+                                <div>
+                                    <img src="{{ song.artwork_url }}" alt="Track Image" width="40px" height="40px">
+                                </div>
+                            </li>
+                            <hr>
+                        {% endfor %}
+                    </ul>
+                {% elif similar_song == None %}
+                    <p>
+                        No Songs Are Available.<br>
+                        Or Possibly Wrong Data Entry.
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

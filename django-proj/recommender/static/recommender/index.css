@@ -1,0 +1,99 @@
+body{
+    background-color: white;
+    margin:0px;
+    padding:0px;
+    color: black !important;
+}
+nav{
+    color: white;
+    height:fit-content;
+    background-color: #333;
+}
+nav h1{
+    font-size: 8vh;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.maindiv{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+h2{
+    color: #000000;
+}
+.sub-main{
+    display: block;
+}
+.sub-main h2{
+    font-size: 4vh;
+    margin: 0px;
+    padding-bottom: 2vh;
+    color: black;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
+.txt{
+    height:35px;
+    width:225px;
+    border-radius: 5px;
+    color: black;
+    font-size: 19px;
+}
+
+.btn{
+    height:40px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: #ffdd47;
+    width:105px;
+    margin-left: 10px;
+}
+
+.results{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+}
+.sub-res h2{
+    text-justify: center;
+    color:black;
+}
+.sub-res{
+    display:block;
+    justify-self: center;
+    height: fit-content;
+    
+}
+.sub-res ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    padding: 0px;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    width:40vw;
+}
+.sub-res a{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    text-decoration: none;
+    word-wrap: break-word;
+}
+.sub-res li{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul hr{
+    width:100%
+}

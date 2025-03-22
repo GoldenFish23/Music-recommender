@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="https://www.bing.com/ck/a?!&&p=6f2c810cb4daf7e24d31618bd38b5eec6dcc778f94ea15ca5ee4322731241b84JmltdHM9MTc0MjI1NjAwMA&ptn=3&ver=2&hsh=4&fclid=3f30417f-40da-6d8d-0bb2-53bf41286c32&u=a1L2ltYWdlcy9zZWFyY2g_cT1kb21lc3RpYytwaWdlb24mY2JuPUtub3dsZWRnZUNhcmQmc3RpZD1jZGI1MjhlYS1hNjI3LWQ4YzQtZmNmMC0wN2MyNjliMGQ0ZmUmdGhpZD1PU0suSEVST1VEb2tBUXVoMVNCVmF0QmEwanpMUk4ycjgtZTJwWGR3SjVLRDJCSGphVHMmRk9STT1LQ0hJTU0&ntb=1" type="image/x-icon">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'recommender/song_info.css' %}" type="text/css">
+        <title>Song Info</title>
+    </head>
+    <body>
+        <nav>
+            <h1>Song Info</h1>
+        </nav>
+        <hr>
+        <div class="maindiv">
+            {% if song_details %}
+                {% with song=song_details.0 %}
+                    <div class="song-details">
+                        <div>
+                            <h1>{{ song.track_name }}</h1>
+                            <h3>by {{ song.artist_name }}</h3>
+                            {% if song.language != 'Unknown' %}
+                                    <h3>{{ song.language }}</h3>
+                            {% endif %}
+                            <h3>{{ song.genre }}</h3>
+                            <a href="{{ song.track_url }}" target="_blank">Listen Here</a>
+                        </div>
+                        <div>
+                            <img src="{{ song.artwork_url }}" alt="Track Image" width="255px" height="255px">
+                        </div>
+                    </div>
+                    
+                    <div class="recommended-songs">
+                        <h2>Recommended Songs Below</h2>
+                        <hr>
+                        {% for rsong in recommended_songs %}
+                            <div class="recommended-song">
+                                <img src="{{ rsong.artwork_url }}" alt="Track Image" width="70px" height="70px">
+                                <h3>{{ rsong.track_name }}</h3>
+                                <h4>by {{ rsong.artist_name }}</h4>
+                                {% if rsong.language != 'Unknown' %}
+                                    <h4>{{ rsong.language }}</h4>
+                                {% endif %}
+                                <!-- <h4>{{ rsong.language }}</h4> -->
+                                <a href="{{ rsong.track_url }}" target="_blank">Listen Here</a>
+                                <hr>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endwith %}
+            {% else %}
+                <p>No records found with given Track ID.</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
