@@ -9,3 +9,6 @@ A modified version of Spotify Dataset is used and may be different from the data
 1. Create a venv folder in this repo.
 2. Install all requirements with <i>pip install requirements.txt</i>.
 3. Ready to run files from 'django-proj' directory that contains backend of the web-server.
+
+## Note * if you think the project has no image and wanted to see image. kindly visit linkedin and see project section.
+[Linkedin](https://www.linkedin.com/in/vijay-vishwakarma-02512a289)
