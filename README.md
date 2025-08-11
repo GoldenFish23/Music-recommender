@@ -10,5 +10,8 @@ A modified version of Spotify Dataset is used and may be different from the data
 2. Install all requirements with <i>pip install -r requirements.txt</i>.
 3. Ready to run files from 'django-proj' directory that contains backend of the web-server.
 
-## Note * if you think the project has no image and wanted to see image. kindly visit linkedin and see project section.
-[Linkedin](https://www.linkedin.com/in/vijay-vishwakarma-02512a289)
+## Screenshots
+
+<img src = "https://github.com/GoldenFish23/Music-recommender/blob/main/resources/Screenshot%202025-08-11%20204055.png">
+<img src = "https://github.com/GoldenFish23/Music-recommender/blob/main/resources/Screenshot%202025-08-11%20204136.png">
+<img src = "https://github.com/GoldenFish23/Music-recommender/blob/main/resources/Screenshot%202025-08-11%20203222.png">
